@@ -13,15 +13,18 @@ const CityForm: React.FC = () => {
 
   const getWeather = async () => {
     try {
-      const response = await fetch("http://localhost:3000/getWeather", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          cities: cityInput.split(",").map((city) => city.trim()),
-        }),
-      });
+      const response = await fetch(
+        "https://weather-server-eosin.vercel.app/getWeather",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            cities: cityInput.split(",").map((city) => city.trim()),
+          }),
+        }
+      );
 
       const data: WeatherResponse = await response.json();
 
