@@ -14,7 +14,7 @@ const CityForm: React.FC = () => {
   const getWeather = async () => {
     try {
       const response = await fetch(
-        "https://weather-server-eosin.vercel.app/getWeather",
+        "https://weather-server-eosin.vercel.afpp/getWeather",
         {
           method: "POST",
           headers: {
